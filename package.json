@@ -1,0 +1,32 @@
+{
+  "name": "confluence",
+  "version": "0.0.1",
+  "description": "Confluence API wrapper for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/johnpduane/confluence-api.git"
+  },
+  "keywords": [
+    "atlassian",
+    "confluence",
+    "wiki",
+    "api"
+  ],
+  "author": "John Duane <johnpduane@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnpduane/confluence-api/issues"
+  },
+  "homepage": "https://github.com/johnpduane/confluence-api",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "dependencies": {
+    "superagent": "^1.2.0"
+  }
+}
