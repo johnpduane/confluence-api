@@ -1,10 +1,10 @@
 {
-  "name": "confluence",
-  "version": "0.0.1",
+  "name": "confluence-api",
+  "version": "1.0.0",
   "description": "Confluence API wrapper for NodeJS",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -13,8 +13,9 @@
   "keywords": [
     "atlassian",
     "confluence",
+    "api",
     "wiki",
-    "api"
+    "node.js"
   ],
   "author": "John Duane <johnpduane@gmail.com>",
   "license": "MIT",
