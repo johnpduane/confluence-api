@@ -137,12 +137,6 @@ Delete a page.
 | id | <code>string</code> | 
 | callback | <code>function</code> | 
 
-<a name="request"></a>
-## request
-Node.js wrapper for Atlassian's Confluence API.
-See https://developer.atlassian.com/confdev/confluence-rest-api
 
 Copyright (c) 2015, John Duane
 Released under the MIT License
-
-**Kind**: global variable  
