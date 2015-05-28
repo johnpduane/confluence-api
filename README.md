@@ -9,7 +9,7 @@ $ npm install confluence-api
 
 Create an instance of Confluence by providing a username and password (Confluence uses basic http authentication) and a baseUrl used for all future requests.  For instance:
 ```javascript
-var Confluence = require("../lib/confluence");
+var Confluence = require("confluence-api");
 var config = {
     username: "testuser",
     password: "test-user-pw",
@@ -17,10 +17,11 @@ var config = {
 };
 var confluence = new Confluence(config);
 confluence.getContentByPageTitle("space-name", "page-title", function(err, data) {
-  // do something interesting with data; for instance,
-  // data.results[0].body.storage.value contains the stored markup for the first
-  // page found in space 'space-name' matching page title 'page-title'
-}
+    // do something interesting with data; for instance,
+    // data.results[0].body.storage.value contains the stored markup for the first
+    // page found in space 'space-name' matching page title 'page-title'
+    console.log(data);
+});
 ```
 
 Confluence currently exposes the following API...
