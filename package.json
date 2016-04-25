@@ -1,6 +1,6 @@
 {
   "name": "confluence-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Confluence API wrapper for NodeJS",
   "main": "./lib/confluence.js",
   "scripts": {
