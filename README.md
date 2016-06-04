@@ -86,6 +86,21 @@ Get stored content for a specific space and page title.
 | id | <code>string</code> | 
 | callback | <code>function</code> | 
 
+<a name="Confluence+getCustomContentById"></a>
+### confluence.getCustomContentById(options, callback)
+The options object format is as follows:
+{
+  id: "1234"              // Mandatory. page id from which to get content.
+  expanders: ['metadata'] // Optional. Array of content members to expand. Defaults to ['versions', 'body.storage']
+}
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+
+| Param | Type |
+| --- | --- |
+| options | <code>object</code> | 
+| callback | <code>function</code> | 
+
 <a name="Confluence+getContentByPageTitle"></a>
 ### confluence.getContentByPageTitle(space, title, callback)
 Get stored content for a specific space and page title.

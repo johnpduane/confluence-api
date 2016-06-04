@@ -117,6 +117,42 @@ describe('Confluence API', function () {
         });
     });
 
+    describe('#getCustomContentById', function() {
+
+        it('should get/read default expanded content', function(done) {
+            var confluence = new Confluence(config);
+            var options = {id: homePageId}
+            
+            confluence.getCustomContentById(options, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.id).to.equal(homePageId);
+                expect(data.version).not.to.be.null;
+                expect(data.body.storage).not.to.be.null;
+                expect(data.body.metadata).to.be.undefined;
+                done();
+            });
+        });
+
+        it('should get/read explicit expander content', function(done) {
+            var confluence = new Confluence(config);
+            var options = {
+                id: homePageId,
+                expanders: ['version', 'metadata']
+            }
+            
+            confluence.getCustomContentById(options, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.id).to.equal(homePageId);
+                expect(data.version).not.to.be.null;
+                expect(data.body).to.be.undefined;
+                expect(data.metadata).not.to.be.null;
+                done();
+            })
+        });
+    })
+
     describe('#getContentByPageTitle', function () {
         it('should get/read page content by space and title', function (done) {
             var confluence = new Confluence(config);
