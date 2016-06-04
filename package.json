@@ -1,6 +1,6 @@
 {
   "name": "confluence-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Confluence API wrapper for NodeJS",
   "main": "./lib/confluence.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "node.js"
   ],
   "author": "John Duane <johnpduane@gmail.com>",
+  "contributors": [{"name": "lukouko", "url": "https://github.com/lukouko"}],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/johnpduane/confluence-api/issues"
