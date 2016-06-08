@@ -53,6 +53,7 @@ Construct Confluence.
 | config.username | <code>string</code> | 
 | config.password | <code>string</code> | 
 | config.baseUrl | <code>string</code> |
+| config.version | <code>number</code> (optional) |
 
 <a name="Confluence+getSpace"></a>
 ### confluence.getSpace(space, callback)
