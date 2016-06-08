@@ -13,7 +13,8 @@ var Confluence = require("confluence-api");
 var config = {
     username: "testuser",
     password: "test-user-pw",
-    baseUrl:  "https://confluence-api-test.atlassian.net/wiki"
+    baseUrl:  "https://confluence-api-test.atlassian.net/wiki",
+    version: 4 // Confluence major version, optional
 };
 var confluence = new Confluence(config);
 confluence.getContentByPageTitle("space-name", "page-title", function(err, data) {
@@ -51,7 +52,7 @@ Construct Confluence.
 | config | <code>Object</code> | 
 | config.username | <code>string</code> | 
 | config.password | <code>string</code> | 
-| config.baseUrl | <code>string</code> | 
+| config.baseUrl | <code>string</code> |
 
 <a name="Confluence+getSpace"></a>
 ### confluence.getSpace(space, callback)
