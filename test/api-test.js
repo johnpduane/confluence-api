@@ -10,6 +10,8 @@
 
 var expect = require('chai').expect;
 var Confluence = require("../lib/confluence");
+var path = require("path");
+var fs = require('fs');
 
 var config = {
     username: "testuser",
@@ -17,12 +19,17 @@ var config = {
     baseUrl:  "https://confluence-api-test.atlassian.net/wiki"
 };
 var space = "TEST";
-var title = "TestPage" + new Date().getTime();
+var title = "TestPage" + Date.now();
 var pageContent = "<p>This is a new page with awesome content! Updated " +
                    new Date().toISOString() + "</p>";
 var homePageId = "491524";
+var testPageId = "491526";
 var newPageId = 0;
 var version = 0;
+
+var filePath = __dirname + "/file.txt";
+fs.writeFileSync(filePath, "This is some text");
+var attachmentId = 0;
 
 describe('Confluence API', function () {
     this.timeout(0);
@@ -179,6 +186,40 @@ describe('Confluence API', function () {
         });
     });
 
+
+    describe('#createAttachment', function() {
+        it('should create an attachment on the page. Could fail if file exists on this page.', function (done) {
+            var confluence = new Confluence(config);
+            confluence.createAttachment(space, newPageId, filePath, function (err, data) {
+                expect(err).to.be.null;
+                expect(data.results).not.to.be.null;
+                expect(data.results[0].title).to.be.equal(path.basename(filePath));
+                done();
+            });
+        });
+
+        it('should be able to get attachments on this page. ', function (done) {
+            var confluence = new Confluence(config);
+            confluence.getAttachments(space, newPageId, function (err, data) {
+                expect(err).to.be.null;
+                expect(data.results).not.to.be.null;
+                attachmentId = data.results[0].id;
+                expect(data.results[0].title).to.be.equal(path.basename(filePath));
+                done();
+            });
+        });
+
+        it('should be able to update attachments data ', function(done){
+            var confluence = new Confluence(config);
+            fs.writeFileSync(filePath, "This is extra cool data ");
+            confluence.updateAttachmentData(space, newPageId, attachmentId, filePath, function(err, data) {
+                expect(err).to.be.null;
+                expect(data.title).to.be.equal(path.basename(filePath));
+                done();
+            });
+        });
+    });
+
     describe('#deleteContent', function () {
         it('should delete a page', function (done) {
             var confluence = new Confluence(config);
@@ -189,6 +230,5 @@ describe('Confluence API', function () {
             });
         });
     });
-
 });
 
