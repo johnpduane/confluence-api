@@ -1,6 +1,6 @@
 {
   "name": "confluence-api",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Confluence API wrapper for NodeJS",
   "main": "./lib/confluence.js",
   "scripts": {
@@ -20,7 +20,8 @@
   "author": "John Duane <johnpduane@gmail.com>",
   "contributors": [
     {"name": "lukouko", "url": "https://github.com/lukouko"},
-    {"name": "Vadim Efimov", "url": "https://github.com/qvaqvaboo"}
+    {"name": "Vadim Efimov", "url": "https://github.com/qvaqvaboo"},
+    {"name": "corn3lius", "url": "https://github.com/corn3lius"}
   ],
   "license": "MIT",
   "bugs": {

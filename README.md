@@ -28,98 +28,106 @@ confluence.getContentByPageTitle("space-name", "page-title", function(err, data)
 Confluence currently exposes the following API...
 
 <a name="Confluence"></a>
+
 ## Confluence
-**Kind**: global class  
-**this**: <code>{Confluence}</code>  
+**Kind**: global class
+**this**: <code>{Confluence}</code>
 
 * [Confluence](#Confluence)
-  * [new Confluence(config)](#new_Confluence_new)
-  * [.getSpace(space, callback)](#Confluence+getSpace)
-  * [.getSpaceHomePage(space, callback)](#Confluence+getSpaceHomePage)
-  * [.getContentById(id, callback)](#Confluence+getContentById)
-  * [.getContentByPageTitle(space, title, callback)](#Confluence+getContentByPageTitle)
-  * [.postContent(space, title, content, parentId, callback)](#Confluence+postContent)
-  * [.putContent(space, id, version, title, content, callback)](#Confluence+putContent)
-  * [.deleteContent(id, callback)](#Confluence+deleteContent)
+    * [new Confluence(config)](#new_Confluence_new)
+    * [.getSpace(space, callback)](#Confluence+getSpace)
+    * [.getSpaceHomePage(space, callback)](#Confluence+getSpaceHomePage)
+    * [.getContentById(id, callback)](#Confluence+getContentById)
+    * [.getCustomContentById(options, callback)](#Confluence+getCustomContentById)
+    * [.getContentByPageTitle(space, title, callback)](#Confluence+getContentByPageTitle)
+    * [.postContent(space, title, content, parentId, callback)](#Confluence+postContent)
+    * [.putContent(space, id, version, title, content, callback)](#Confluence+putContent)
+    * [.deleteContent(id, callback)](#Confluence+deleteContent)
+    * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
+    * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
+    * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
 
 <a name="new_Confluence_new"></a>
+
 ### new Confluence(config)
 Construct Confluence.
 
 
-| Param | Type |
-| --- | --- |
-| config | <code>Object</code> | 
-| config.username | <code>string</code> | 
-| config.password | <code>string</code> | 
-| config.baseUrl | <code>string</code> |
-| config.version | <code>number</code> (optional) |
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>Object</code> |  |
+| config.username | <code>string</code> |  |
+| config.password | <code>string</code> |  |
+| config.baseUrl | <code>string</code> |  |
+| config.version | <code>number</code> | Optional |
 
 <a name="Confluence+getSpace"></a>
+
 ### confluence.getSpace(space, callback)
 Get space information.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| space | <code>string</code> | 
-| callback | <code>function</code> | 
+| space | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="Confluence+getSpaceHomePage"></a>
+
 ### confluence.getSpaceHomePage(space, callback)
 Get space home page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| space | <code>string</code> | 
-| callback | <code>function</code> | 
+| space | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="Confluence+getContentById"></a>
+
 ### confluence.getContentById(id, callback)
 Get stored content for a specific space and page title.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| id | <code>string</code> | 
-| callback | <code>function</code> | 
+| id | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="Confluence+getCustomContentById"></a>
+
 ### confluence.getCustomContentById(options, callback)
-The options object format is as follows:
-{
-  id: "1234"              // Mandatory. page id from which to get content.
-  expanders: ['metadata'] // Optional. Array of content members to expand. Defaults to ['versions', 'body.storage']
-}
+Get stored content for a specific page id with optional custom expanders.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
-| Param | Type |
-| --- | --- |
-| options | <code>object</code> | 
-| callback | <code>function</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | for the custom content request |
+| callback | <code>function</code> |  |
 
 <a name="Confluence+getContentByPageTitle"></a>
+
 ### confluence.getContentByPageTitle(space, title, callback)
 Get stored content for a specific space and page title.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| space | <code>string</code> | 
-| title | <code>string</code> | 
-| callback | <code>function</code> | 
+| space | <code>string</code> |
+| title | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="Confluence+postContent"></a>
+
 ### confluence.postContent(space, title, content, parentId, callback)
 Post content to a new page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -130,30 +138,76 @@ Post content to a new page.
 | callback | <code>function</code> |  |
 
 <a name="Confluence+putContent"></a>
+
 ### confluence.putContent(space, id, version, title, content, callback)
 Put/update stored content for a page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| space | <code>string</code> | 
-| id | <code>string</code> | 
-| version | <code>number</code> | 
-| title | <code>string</code> | 
-| content | <code>string</code> | 
-| callback | <code>function</code> | 
+| space | <code>string</code> |
+| id | <code>string</code> |
+| version | <code>number</code> |
+| title | <code>string</code> |
+| content | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="Confluence+deleteContent"></a>
+
 ### confluence.deleteContent(id, callback)
 Delete a page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>  
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
 
 | Param | Type |
 | --- | --- |
-| id | <code>string</code> | 
-| callback | <code>function</code> | 
+| id | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+getAttachments"></a>
+
+### confluence.getAttachments(space, id, callback)
+Get attachments
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| space | <code>string</code> |
+| id | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+createAttachment"></a>
+
+### confluence.createAttachment(space, id, filepath, callback)
+This allows you to post attachments to the pages you create.
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| space | <code>string</code> |  |
+| id | <code>string</code> |  |
+| filepath | <code>string</code> | absolute path of the file you are sending |
+| callback | <code>function</code> |  |
+
+<a name="Confluence+updateAttachmentData"></a>
+
+### confluence.updateAttachmentData(space, id, attachmentId, filepath, callback)
+This allows you to update posted attachments data
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| space | <code>string</code> |
+| id | <code>string</code> |
+| attachmentId | <code>string</code> |
+| filepath | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="request"></a>
 
 
 Copyright (c) 2015, John Duane
