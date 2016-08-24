@@ -19,6 +19,7 @@ var config = {
     baseUrl:  "https://confluence-api-test.atlassian.net/wiki"
 };
 var space = "TEST";
+var query = "label=global:test";
 var title = "TestPage" + Date.now();
 var pageContent = "<p>This is a new page with awesome content! Updated " +
                    new Date().toISOString() + "</p>";
@@ -226,6 +227,19 @@ describe('Confluence API', function () {
             confluence.deleteContent(newPageId, function(err, data) {
                 expect(err).to.be.null;
                 expect(data.statusCode).to.equal(204);
+                done();
+            });
+        });
+    });
+
+    describe('#search', function () {
+        it('should get information for query', function (done) {
+            config.version = 4;
+            var confluence = new Confluence(config);
+            confluence.search(query, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.totalSize).to.equal(1);
                 done();
             });
         });

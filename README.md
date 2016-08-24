@@ -46,6 +46,7 @@ Confluence currently exposes the following API...
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
     * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
+    * [.search(query, callback)](#Confluence+search)
 
 <a name="new_Confluence_new"></a>
 
@@ -205,6 +206,18 @@ This allows you to update posted attachments data
 | id | <code>string</code> |
 | attachmentId | <code>string</code> |
 | filepath | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+search"></a>
+
+### confluence.search(query, callback)
+This allows you to search by query
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| query | <code>string</code> |
 | callback | <code>function</code> |
 
 <a name="request"></a>
