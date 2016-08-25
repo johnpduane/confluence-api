@@ -200,8 +200,6 @@ describe('Confluence API', function () {
         });
     });
 
-
-
     describe('#createAttachment', function() {
         it('should create an attachment on the page. Could fail if file exists on this page.', function (done) {
             var confluence = new Confluence(config);
@@ -257,6 +255,4 @@ describe('Confluence API', function () {
             });
         });
     });
-
 });
-

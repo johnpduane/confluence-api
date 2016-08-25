@@ -221,6 +221,8 @@ This allows you to search by query
 | query | <code>string</code> |
 | callback | <code>function</code> |
 
+<a name="Confluence+putLabel"></a>
+
 ### confluence.putLabel(space, id, version, title, content, callback)
 Put/update data in labels a page
 
