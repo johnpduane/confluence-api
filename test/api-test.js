@@ -113,6 +113,19 @@ describe('Confluence API', function () {
         });
     });
 
+    describe('#putLabel', function () {
+        it('should put/update page labels', function (done) {
+            var confluence = new Confluence(config);
+            var content = [{name:'test'}];
+            version++;
+            confluence.putLabel(space, newPageId, version, title, content, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                done();
+            });
+        });
+    });
+
     describe('#getContentById', function () {
         it('should get/read page content by space and title', function (done) {
             var confluence = new Confluence(config);
@@ -188,6 +201,7 @@ describe('Confluence API', function () {
     });
 
 
+
     describe('#createAttachment', function() {
         it('should create an attachment on the page. Could fail if file exists on this page.', function (done) {
             var confluence = new Confluence(config);
@@ -239,10 +253,10 @@ describe('Confluence API', function () {
             confluence.search(query, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
-                expect(data.totalSize).to.equal(1);
                 done();
             });
         });
     });
+
 });
 
