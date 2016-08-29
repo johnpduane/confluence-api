@@ -46,6 +46,9 @@ Confluence currently exposes the following API...
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
     * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
+    * [.search(query, callback)](#Confluence+search)
+    * [.putLabel(space, id, version, title, content, callback)](#Confluence+putLabel)
+    * [.pluginsSearch(path, query, callback)](#Confluence+pluginsSearch)
 
 <a name="new_Confluence_new"></a>
 
@@ -205,6 +208,47 @@ This allows you to update posted attachments data
 | id | <code>string</code> |
 | attachmentId | <code>string</code> |
 | filepath | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+search"></a>
+
+### confluence.search(query, callback)
+This allows you to search by query
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| query | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+putLabel"></a>
+
+### confluence.putLabel(space, id, version, title, content, callback)
+Put/update data in labels a page
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| space | <code>string</code> |  |
+| id | <code>string</code> |  |
+| versions | <code>string</code> |  |
+| title | <code>string</code> |  |
+| content | <code>array</code> | [{name: 'name'}] |
+| callback | <code>function</code> |  |
+
+<a name="Confluence+pluginsSearch"></a>
+
+### confluence.pluginsSearch(path, query, callback)
+This allows you to search in plugins by query
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> |
+| query | <code>string</code> |
 | callback | <code>function</code> |
 
 <a name="request"></a>
