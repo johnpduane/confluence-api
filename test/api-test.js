@@ -255,4 +255,18 @@ describe('Confluence API', function () {
             });
         });
     });
+
+    describe('#pluginsSearch', function () {
+        it('should get information in plugin for query ', function (done) {
+            var confluence = new Confluence(config);
+            var path  = '/rest/api/content/';
+            var query = homePageId + '?expand=body.storage,version';
+            confluence.pluginsSearch(path, query, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.id).to.equal(homePageId);
+                done();
+            });
+        });
+    });
 });

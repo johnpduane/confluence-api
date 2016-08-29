@@ -48,6 +48,7 @@ Confluence currently exposes the following API...
     * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
     * [.search(query, callback)](#Confluence+search)
     * [.putLabel(space, id, version, title, content, callback)](#Confluence+putLabel)
+    * [.pluginsSearch(path, query, callback)](#Confluence+pluginsSearch)
 
 <a name="new_Confluence_new"></a>
 
@@ -236,6 +237,19 @@ Put/update data in labels a page
 | title | <code>string</code> |  |
 | content | <code>array</code> | [{name: 'name'}] |
 | callback | <code>function</code> |  |
+
+<a name="Confluence+pluginsSearch"></a>
+
+### confluence.pluginsSearch(path, query, callback)
+This allows you to search in plugins by query
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| path | <code>string</code> |
+| query | <code>string</code> |
+| callback | <code>function</code> |
 
 <a name="request"></a>
 
