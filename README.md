@@ -224,7 +224,7 @@ Get labels from existing page.
 | callback | <code>function</code> |
 
 
-<a name="Confluence+getLabels"></a>
+<a name="Confluence+addLabels"></a>
 
 ### confluence.addLabels(id, labels, callback)
 Add content labels to a existing page.
@@ -238,7 +238,7 @@ Add content labels to a existing page.
 | callback | <code>function</code> |
 
 
-<a name="Confluence+getLabels"></a>
+<a name="Confluence+deleteLabel"></a>
 
 ### confluence.deleteLabel(id, label, callback)
 Delete a label from a page.
