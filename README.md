@@ -45,8 +45,11 @@ Confluence currently exposes the following API...
     * [.deleteContent(id, callback)](#Confluence+deleteContent)
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
-    * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
-
+    * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)   
+    * [.getLabels(id, callback)](#Confluence+getLabels)
+    * [.addLabels(id, labels, callback)](#Confluence+addLabels)
+    * [.deleteLabel(id, label, callback)](#Confluence+deleteLabel)
+    
 <a name="new_Confluence_new"></a>
 
 ### new Confluence(config)
@@ -205,6 +208,47 @@ This allows you to update posted attachments data
 | id | <code>string</code> |
 | attachmentId | <code>string</code> |
 | filepath | <code>string</code> |
+| callback | <code>function</code> |
+
+
+<a name="Confluence+getLabels"></a>
+
+### confluence.getLabels(id, callback)
+Get labels from existing page.
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| id | <code>string</code> |
+| callback | <code>function</code> |
+
+
+<a name="Confluence+getLabels"></a>
+
+### confluence.addLabels(id, labels, callback)
+Add content labels to a existing page.
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| id | <code>string</code> |
+| labels | <code>array</code> |
+| callback | <code>function</code> |
+
+
+<a name="Confluence+getLabels"></a>
+
+### confluence.deleteLabel(id, label, callback)
+Delete a label from a page.
+
+**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+
+| Param | Type |
+| --- | --- |
+| id | <code>string</code> |
+| label | <code>string</code> |
 | callback | <code>function</code> |
 
 <a name="request"></a>
