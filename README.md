@@ -234,7 +234,7 @@ Add content labels to a existing page.
 | Param | Type |
 | --- | --- |
 | id | <code>string</code> |
-| labels | <code>array</code> |
+| labels | <code>Array.<{prefix:string, name:string}></code> |
 | callback | <code>function</code> |
 
 
