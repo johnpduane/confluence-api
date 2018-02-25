@@ -3,3 +3,4 @@ node_modules/
 .idea/
 api.md
 api2.md
+test/file.txt

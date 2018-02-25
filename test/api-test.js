@@ -129,7 +129,7 @@ describe('Confluence API', function () {
         it('should get/read default expanded content', function(done) {
             var confluence = new Confluence(config);
             var options = {id: homePageId}
-            
+
             confluence.getCustomContentById(options, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
@@ -147,7 +147,7 @@ describe('Confluence API', function () {
                 id: homePageId,
                 expanders: ['version', 'metadata']
             }
-            
+
             confluence.getCustomContentById(options, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
@@ -230,5 +230,52 @@ describe('Confluence API', function () {
             });
         });
     });
+
+    describe('#labels', function () {
+        var labels = [
+            {
+                "prefix": "global",
+                "name": "no-weak-sauce "
+            },
+            {
+                "prefix": "global",
+                "name": "awesome-sauce"
+            }
+        ];
+
+        it('should add an array of labels', function(done) {
+            var confluence = new Confluence(config);
+            confluence.postLabels(homePageId, labels, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.results.length).to.equal(labels.length);
+                done();
+            });
+        });
+
+        it('should get an array of labels', function(done) {
+            var confluence = new Confluence(config);
+            confluence.getLabels(homePageId, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.results.length).to.equal(labels.length);
+                expect(data.results.filter(function(label) {return label.name === 'awesome-sauce'}).length).to.equal(1);
+                done();
+            });
+        });
+
+        it('should delete a single label', function(done) {
+            var confluence = new Confluence(config);
+            confluence.deleteLabel(homePageId, labels[0].name, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.statusCode).to.equal(204);
+                done();
+            });
+        });
+
+    });
+
+
 });
 
