@@ -4,7 +4,8 @@
   "description": "Confluence API wrapper for NodeJS",
   "main": "./lib/confluence.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "create-docs": "jsdoc2md lib/confluence.js > api.md"
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,30 @@
   ],
   "author": "John Duane <johnpduane@gmail.com>",
   "contributors": [
-    {"name": "lukouko", "url": "https://github.com/lukouko"},
-    {"name": "Vadim Efimov", "url": "https://github.com/qvaqvaboo"},
-    {"name": "corn3lius", "url": "https://github.com/corn3lius"},
-    {"name": "Matthias Lersch", "url": "https://github.com/mlersch"}
+    {
+      "name": "John Duane",
+      "url": "https://github.com/johnpduane"
+    },
+    {
+      "name": "lukouko",
+      "url": "https://github.com/lukouko"
+    },
+    {
+      "name": "Vadim Efimov",
+      "url": "https://github.com/qvaqvaboo"
+    },
+    {
+      "name": "corn3lius",
+      "url": "https://github.com/corn3lius"
+    },
+    {
+      "name": "Matthias Lersch",
+      "url": "https://github.com/mlersch"
+    },
+    {
+      "name": "arthmoeros",
+      "url": "https://github.com/arthmoeros"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -31,6 +52,7 @@
   "homepage": "https://github.com/johnpduane/confluence-api",
   "devDependencies": {
     "chai": "*",
+    "jsdoc-to-markdown": "^4.0.1",
     "mocha": "*"
   },
   "dependencies": {
