@@ -129,7 +129,7 @@ describe('Confluence API', function () {
         it('should get/read default expanded content', function(done) {
             var confluence = new Confluence(config);
             var options = {id: homePageId}
-            
+
             confluence.getCustomContentById(options, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
@@ -147,7 +147,7 @@ describe('Confluence API', function () {
                 id: homePageId,
                 expanders: ['version', 'metadata']
             }
-            
+
             confluence.getCustomContentById(options, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
@@ -245,7 +245,7 @@ describe('Confluence API', function () {
 
         it('should add an array of labels', function(done) {
             var confluence = new Confluence(config);
-            confluence.addLabels(homePageId, labels, function(err, data) {
+            confluence.postLabels(homePageId, labels, function(err, data) {
                 expect(err).to.be.null;
                 expect(data).not.to.be.null;
                 expect(data.results.length).to.equal(labels.length);

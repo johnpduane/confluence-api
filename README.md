@@ -45,11 +45,11 @@ Confluence currently exposes the following API...
     * [.deleteContent(id, callback)](#Confluence+deleteContent)
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
-    * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)   
+    * [.updateAttachmentData(space, id, attachmentId, filepath, callback)](#Confluence+updateAttachmentData)
     * [.getLabels(id, callback)](#Confluence+getLabels)
-    * [.addLabels(id, labels, callback)](#Confluence+addLabels)
+    * [.postLabels(id, labels, callback)](#Confluence+postLabels)
     * [.deleteLabel(id, label, callback)](#Confluence+deleteLabel)
-    
+
 <a name="new_Confluence_new"></a>
 
 ### new Confluence(config)
@@ -69,7 +69,7 @@ Construct Confluence.
 ### confluence.getSpace(space, callback)
 Get space information.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -81,7 +81,7 @@ Get space information.
 ### confluence.getSpaceHomePage(space, callback)
 Get space home page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -93,7 +93,7 @@ Get space home page.
 ### confluence.getContentById(id, callback)
 Get stored content for a specific space and page title.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -105,7 +105,7 @@ Get stored content for a specific space and page title.
 ### confluence.getCustomContentById(options, callback)
 Get stored content for a specific page id with optional custom expanders.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -117,7 +117,7 @@ Get stored content for a specific page id with optional custom expanders.
 ### confluence.getContentByPageTitle(space, title, callback)
 Get stored content for a specific space and page title.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -130,7 +130,7 @@ Get stored content for a specific space and page title.
 ### confluence.postContent(space, title, content, parentId, callback)
 Post content to a new page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -145,7 +145,7 @@ Post content to a new page.
 ### confluence.putContent(space, id, version, title, content, callback)
 Put/update stored content for a page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -161,7 +161,7 @@ Put/update stored content for a page.
 ### confluence.deleteContent(id, callback)
 Delete a page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -173,7 +173,7 @@ Delete a page.
 ### confluence.getAttachments(space, id, callback)
 Get attachments
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -186,7 +186,7 @@ Get attachments
 ### confluence.createAttachment(space, id, filepath, callback)
 This allows you to post attachments to the pages you create.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -200,7 +200,7 @@ This allows you to post attachments to the pages you create.
 ### confluence.updateAttachmentData(space, id, attachmentId, filepath, callback)
 This allows you to update posted attachments data
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -210,40 +210,37 @@ This allows you to update posted attachments data
 | filepath | <code>string</code> |
 | callback | <code>function</code> |
 
-
 <a name="Confluence+getLabels"></a>
 
 ### confluence.getLabels(id, callback)
-Get labels from existing page.
+Get labels from content
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
 | id | <code>string</code> |
 | callback | <code>function</code> |
 
+<a name="Confluence+postLabels"></a>
 
-<a name="Confluence+addLabels"></a>
+### confluence.postLabels(id, labels, callback)
+Post content labels to a existing page.
 
-### confluence.addLabels(id, labels, callback)
-Add content labels to a existing page.
-
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
 | id | <code>string</code> |
-| labels | <code>Array.<{prefix:string, name:string}></code> |
+| labels | <code>Array.&lt;{prefix:string, name:string}&gt;</code> |
 | callback | <code>function</code> |
-
 
 <a name="Confluence+deleteLabel"></a>
 
 ### confluence.deleteLabel(id, label, callback)
 Delete a label from a page.
 
-**Kind**: instance method of <code>[Confluence](#Confluence)</code>
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
 | Param | Type |
 | --- | --- |
@@ -253,6 +250,9 @@ Delete a label from a page.
 
 <a name="request"></a>
 
+## request
+Node.js wrapper for Atlassian's Confluence API.
+See https://developer.atlassian.com/confdev/confluence-rest-api
 
 Copyright (c) 2015, John Duane
 Released under the MIT License
