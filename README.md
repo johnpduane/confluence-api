@@ -41,7 +41,7 @@ Confluence currently exposes the following API...
     * [.getCustomContentById(options, callback)](#Confluence+getCustomContentById)
     * [.getContentByPageTitle(space, title, callback)](#Confluence+getContentByPageTitle)
     * [.postContent(space, title, content, parentId, callback)](#Confluence+postContent)
-    * [.putContent(space, id, version, title, content, callback)](#Confluence+putContent)
+    * [.putContent(space, id, version, title, content, callback, minorEdit)](#Confluence+putContent)
     * [.deleteContent(id, callback)](#Confluence+deleteContent)
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
@@ -49,6 +49,7 @@ Confluence currently exposes the following API...
     * [.getLabels(id, callback)](#Confluence+getLabels)
     * [.postLabels(id, labels, callback)](#Confluence+postLabels)
     * [.deleteLabel(id, label, callback)](#Confluence+deleteLabel)
+    * [.search(query, callback)](#Confluence+search)
 
 <a name="new_Confluence_new"></a>
 
@@ -142,19 +143,20 @@ Post content to a new page.
 
 <a name="Confluence+putContent"></a>
 
-### confluence.putContent(space, id, version, title, content, callback)
+### confluence.putContent(space, id, version, title, content, callback, minorEdit)
 Put/update stored content for a page.
 
 **Kind**: instance method of [<code>Confluence</code>](#Confluence)
 
-| Param | Type |
-| --- | --- |
-| space | <code>string</code> |
-| id | <code>string</code> |
-| version | <code>number</code> |
-| title | <code>string</code> |
-| content | <code>string</code> |
-| callback | <code>function</code> |
+| Param | Type | Description |
+| --- | --- | --- |
+| space | <code>string</code> |  |
+| id | <code>string</code> |  |
+| version | <code>number</code> |  |
+| title | <code>string</code> |  |
+| content | <code>string</code> |  |
+| callback | <code>function</code> |  |
+| minorEdit | <code>boolean</code> | Optional |
 
 <a name="Confluence+deleteContent"></a>
 
@@ -246,6 +248,18 @@ Delete a label from a page.
 | --- | --- |
 | id | <code>string</code> |
 | label | <code>string</code> |
+| callback | <code>function</code> |
+
+<a name="Confluence+search"></a>
+
+### confluence.search(query, callback)
+Search by query
+
+**Kind**: instance method of [<code>Confluence</code>](#Confluence)
+
+| Param | Type |
+| --- | --- |
+| query | <code>string</code> |
 | callback | <code>function</code> |
 
 <a name="request"></a>

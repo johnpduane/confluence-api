@@ -276,6 +276,18 @@ describe('Confluence API', function () {
 
     });
 
+    describe('#search', function () {
+        it('should get information for query', function (done) {
+            config.version = 4;
+            var confluence = new Confluence(config);
+            var query = "label=global:test";
+            confluence.search(query, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                done();
+            });
+        });
+    });
 
 });
 
