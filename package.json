@@ -1,6 +1,6 @@
 {
   "name": "confluence-api",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Confluence API wrapper for NodeJS",
   "main": "./lib/confluence.js",
   "scripts": {
@@ -39,6 +39,10 @@
     {
       "name": "Matthias Lersch",
       "url": "https://github.com/mlersch"
+    },
+    {
+      "name": "evgeniusorg",
+      "url": "https://github.com/evgeniusorg"
     },
     {
       "name": "arthmoeros",
