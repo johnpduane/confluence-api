@@ -184,6 +184,18 @@ describe('Confluence API', function () {
                 done();
             });
         });
+
+        it('should put/update wiki content', function (done) {
+            var confluence = new Confluence(config);
+            version++;
+            pageContent = "h1. Header 1";
+            confluence.putContent(space, newPageId, version, title, pageContent, function(err, data) {
+                expect(err).to.be.null;
+                expect(data).not.to.be.null;
+                expect(data.body.storage.value).to.equal("<h1>Header 1</h1>");
+                done();
+            }, null, "wiki");
+        });
     });
 
 
