@@ -40,8 +40,8 @@ Confluence currently exposes the following API...
     * [.getContentById(id, callback)](#Confluence+getContentById)
     * [.getCustomContentById(options, callback)](#Confluence+getCustomContentById)
     * [.getContentByPageTitle(space, title, callback)](#Confluence+getContentByPageTitle)
-    * [.postContent(space, title, content, parentId, callback)](#Confluence+postContent)
-    * [.putContent(space, id, version, title, content, callback, minorEdit)](#Confluence+putContent)
+    * [.postContent(space, title, content, parentId, callback, representation)](#Confluence+postContent)
+    * [.putContent(space, id, version, title, content, callback, minorEdit, representation)](#Confluence+putContent)
     * [.deleteContent(id, callback)](#Confluence+deleteContent)
     * [.getAttachments(space, id, callback)](#Confluence+getAttachments)
     * [.createAttachment(space, id, filepath, callback)](#Confluence+createAttachment)
@@ -140,7 +140,7 @@ Post content to a new page.
 | content | <code>string</code> |  |
 | parentId | <code>number</code> | A null value will cause the page to be added under the space's home page |
 | callback | <code>function</code> |  |
-| representation | <code>string</code> | Optional value that will change the type of content (Wiki, Storage, etc.) |
+| representation | <code>string</code> | Optional |
 
 <a name="Confluence+putContent"></a>
 
@@ -158,7 +158,7 @@ Put/update stored content for a page.
 | content | <code>string</code> |  |
 | callback | <code>function</code> |  |
 | minorEdit | <code>boolean</code> | Optional |
-| representation | <code>string</code> | Optional value that will change the type of content (Wiki, Storage, etc.) |
+| representation | <code>string</code> | Optional |
 
 <a name="Confluence+deleteContent"></a>
 
