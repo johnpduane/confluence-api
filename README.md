@@ -128,7 +128,7 @@ Get stored content for a specific space and page title.
 
 <a name="Confluence+postContent"></a>
 
-### confluence.postContent(space, title, content, parentId, callback)
+### confluence.postContent(space, title, content, parentId, callback, representation)
 Post content to a new page.
 
 **Kind**: instance method of [<code>Confluence</code>](#Confluence)
@@ -140,10 +140,11 @@ Post content to a new page.
 | content | <code>string</code> |  |
 | parentId | <code>number</code> | A null value will cause the page to be added under the space's home page |
 | callback | <code>function</code> |  |
+| representation | <code>string</code> | Optional value that will change the type of content (Wiki, Storage, etc.) |
 
 <a name="Confluence+putContent"></a>
 
-### confluence.putContent(space, id, version, title, content, callback, minorEdit)
+### confluence.putContent(space, id, version, title, content, callback, minorEdit, representation)
 Put/update stored content for a page.
 
 **Kind**: instance method of [<code>Confluence</code>](#Confluence)
@@ -157,6 +158,7 @@ Put/update stored content for a page.
 | content | <code>string</code> |  |
 | callback | <code>function</code> |  |
 | minorEdit | <code>boolean</code> | Optional |
+| representation | <code>string</code> | Optional value that will change the type of content (Wiki, Storage, etc.) |
 
 <a name="Confluence+deleteContent"></a>
 
