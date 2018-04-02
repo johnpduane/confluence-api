@@ -7,12 +7,12 @@ Install confluence-api via npm:
 $ npm install confluence-api
 ```
 
-Create an instance of Confluence by providing a username and password (Confluence uses basic http authentication) and a baseUrl used for all future requests.  For instance:
+Create an instance of Confluence by providing a username and password (or token) and a baseUrl used for all future requests.  Confluence uses [basic http authentication](https://developer.atlassian.com/cloud/confluence/basic-auth-for-rest-apis/). For instance:
 ```javascript
 var Confluence = require("confluence-api");
 var config = {
     username: "testuser",
-    password: "test-user-pw",
+    password: "test-user-pw-or-rest-api-token",
     baseUrl:  "https://confluence-api-test.atlassian.net/wiki",
     version: 4 // Confluence major version, optional
 };
@@ -61,7 +61,7 @@ Construct Confluence.
 | --- | --- | --- |
 | config | <code>Object</code> |  |
 | config.username | <code>string</code> |  |
-| config.password | <code>string</code> |  |
+| config.password | <code>string</code> | The password or REST API Token for the user ([docs](https://developer.atlassian.com/cloud/confluence/basic-auth-for-rest-apis/)) |
 | config.baseUrl | <code>string</code> |  |
 | config.version | <code>number</code> | Optional |
 
